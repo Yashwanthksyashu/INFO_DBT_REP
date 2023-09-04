@@ -1,1 +1,0 @@
-select * from yash_emp
