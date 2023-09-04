@@ -1,0 +1,1 @@
+select * from infm_dev_db.public.yash_dept
