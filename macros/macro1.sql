@@ -3,7 +3,7 @@
 {% endmacro %}
 
 {% macro macro_for_initcap(column_name) %}
-initcap({{column_name}})
+initcap({{column_name}}) as CUSTOMER_NAME
 {% endmacro %}
 
 {% macro macro_for_parse (column_name) %}
@@ -42,3 +42,22 @@ end as COUNTRY
   END as COUNTRY,
   split_part({{ column_name }}, ',', 2) as city
 {% endmacro %}
+
+
+
+
+{% macro MACRO_FOR_PRODUCT(column_name) %}
+CASE
+    WHEN TRIM(UPPER(POSITION('SAMSUNG' IN {{column_name}}))) > 0 THEN 'SAMSUNG'
+    WHEN TRIM(UPPER(POSITION('apple' IN {{column_name}})))>0 THEN 'APPLE'
+    WHEN TRIM(UPPER(POSITION('Godrej ' IN {{column_name}})))>0 THEN 'GODREJ'
+    ELSE NULL
+  END AS brandname,
+  CASE
+    WHEN TRIM(UPPER(POSITION('GALAXY-M20' IN {{column_name}}))) > 0 THEN 'GALAXY-M20'
+    WHEN TRIM(UPPER(POSITION('iphoneI14' IN {{column_name}}))) > 0 THEN 'iphoneI14'
+    WHEN TRIM(UPPER(POSITION('FH20' IN {{column_name}}))) > 0 THEN 'FH20' 
+    ELSE NULL
+  END AS model,
+  TO_DATE(REGEXP_SUBSTR({{column_name}}, '\\d{2}-\\d{2}-\\d{4}', 1, 1), 'DD-MM-YYYY') AS purchase_date
+  {% endmacro %}

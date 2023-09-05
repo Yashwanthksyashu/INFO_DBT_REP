@@ -1,3 +1,3 @@
 select 
-{{macro_for_customer_adress('CUSTOMER_ADDRESS')}}
+{{MACRO_FOR_PRODUCT('PRODUCT')}}
 from INFM_DEV_DB.PUBLIC.VEN_YASH_CUST
