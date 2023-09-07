@@ -61,3 +61,7 @@ CASE
   END AS model,
   TO_DATE(REGEXP_SUBSTR({{column_name}}, '\\d{2}-\\d{2}-\\d{4}', 1, 1), 'DD-MM-YYYY') AS purchase_date
   {% endmacro %}
+
+
+{% docs dbt_profiler__customer %}
+
