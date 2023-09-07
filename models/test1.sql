@@ -13,3 +13,6 @@ SELECT
   END AS model,
   TO_DATE(REGEXP_SUBSTR(PRODUCT, '\\d{2}-\\d{2}-\\d{4}', 1, 1), 'DD-MM-YYYY') AS purchase_date
 FROM INFM_DEV_DB.PUBLIC.VEN_YASH_CUST;
+
+
+

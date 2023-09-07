@@ -34,4 +34,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     # Applies to all files under models/example/
+
+models:
+  my_new_project:
+    inline_query:
+      surrogate_key_treat_nulls_as_empty_strings: True
   

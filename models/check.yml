@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dup
+    description: One record per customer
+    columns:
+      - name: eno
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: ename
+        description: NULL when a customer has not yet placed an order.
+        tests:
+          - not_null
+
+
+
+
+
+
+
