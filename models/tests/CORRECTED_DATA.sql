@@ -8,6 +8,4 @@ from INFM_DEV_DB.PUBLIC.VEN_YASH_CUST
 
 
 
-{{snowflake__deduplicate('CORRECTED_DATA', 'CITY', 'CITY')}}
-
 
